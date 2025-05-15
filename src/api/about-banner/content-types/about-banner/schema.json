@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_banners",
+  "info": {
+    "singularName": "about-banner",
+    "pluralName": "about-banners",
+    "displayName": "About Banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

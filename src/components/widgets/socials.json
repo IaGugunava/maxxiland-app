@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_widgets_socials",
+  "info": {
+    "displayName": "Socials",
+    "icon": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "text"
+    }
+  }
+}

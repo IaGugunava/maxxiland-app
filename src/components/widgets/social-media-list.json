@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_widgets_social_media_lists",
+  "info": {
+    "displayName": "social media list"
+  },
+  "options": {},
+  "attributes": {
+    "socialMedia": {
+      "type": "component",
+      "repeatable": true,
+      "component": "widgets.socials"
+    }
+  }
+}

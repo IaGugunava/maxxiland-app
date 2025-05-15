@@ -14,9 +14,6 @@
     "name": {
       "type": "string"
     },
-    "description": {
-      "type": "string"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -30,6 +27,23 @@
     },
     "created": {
       "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "short_description": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_infos",
+  "info": {
+    "singularName": "contact-info",
+    "pluralName": "contact-infos",
+    "displayName": "contact info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "widgets.socials"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contactLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "widgets.socials"
+    }
+  }
+}

@@ -699,12 +699,12 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSocialMediaSocialMedia extends Struct.CollectionTypeSchema {
-  collectionName: 'social_medias';
+export interface ApiSocialSocial extends Struct.CollectionTypeSchema {
+  collectionName: 'socials';
   info: {
-    displayName: 'social media';
-    pluralName: 'social-medias';
-    singularName: 'social-media';
+    displayName: 'social';
+    pluralName: 'socials';
+    singularName: 'social';
   };
   options: {
     draftAndPublish: true;
@@ -716,11 +716,11 @@ export interface ApiSocialMediaSocialMedia extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::social-media.social-media'
+      'api::social.social'
     > &
       Schema.Attribute.Private;
+    media: Schema.Attribute.Component<'widgets.socials', true>;
     publishedAt: Schema.Attribute.DateTime;
-    social: Schema.Attribute.Component<'widgets.socials', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1246,7 +1246,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::main-banner.main-banner': ApiMainBannerMainBanner;
       'api::service.service': ApiServiceService;
-      'api::social-media.social-media': ApiSocialMediaSocialMedia;
+      'api::social.social': ApiSocialSocial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

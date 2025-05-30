@@ -1,17 +1,23 @@
 {
   "kind": "collectionType",
-  "collectionName": "services",
+  "collectionName": "shops",
   "info": {
-    "singularName": "service",
-    "pluralName": "services",
-    "displayName": "service",
+    "singularName": "shop",
+    "pluralName": "shops",
+    "displayName": "shop",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "sale": {
       "type": "string"
     },
     "image": {
@@ -25,28 +31,27 @@
         "audios"
       ]
     },
-    "created": {
-      "type": "date"
-    },
     "description": {
       "type": "richtext"
     },
+    "startDate": {
+      "type": "date"
+    },
+    "finishDate": {
+      "type": "date"
+    },
+    "slug": {
+      "type": "string"
+    },
     "cover_image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "short_description": {
-      "type": "string"
-    },
-    "slug": {
-      "type": "string"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

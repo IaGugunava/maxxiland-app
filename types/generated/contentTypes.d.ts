@@ -662,6 +662,32 @@ export interface ApiMainBannerMainBanner extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPagePage extends Struct.CollectionTypeSchema {
+  collectionName: 'pages';
+  info: {
+    displayName: 'page';
+    pluralName: 'pages';
+    singularName: 'page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
@@ -703,7 +729,7 @@ export interface ApiShopShop extends Struct.CollectionTypeSchema {
   collectionName: 'shops';
   info: {
     description: '';
-    displayName: 'shop';
+    displayName: 'sale';
     pluralName: 'shops';
     singularName: 'shop';
   };
@@ -726,6 +752,7 @@ export interface ApiShopShop extends Struct.CollectionTypeSchema {
     price: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     sale: Schema.Attribute.String;
+    short_description: Schema.Attribute.Text;
     slug: Schema.Attribute.String;
     startDate: Schema.Attribute.Date;
     title: Schema.Attribute.String;
@@ -1309,6 +1336,7 @@ declare module '@strapi/strapi' {
       'api::gallery.gallery': ApiGalleryGallery;
       'api::global.global': ApiGlobalGlobal;
       'api::main-banner.main-banner': ApiMainBannerMainBanner;
+      'api::page.page': ApiPagePage;
       'api::service.service': ApiServiceService;
       'api::shop.shop': ApiShopShop;
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
